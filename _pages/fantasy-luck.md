@@ -11,11 +11,11 @@ author_profile: true
   <option value = "../files/fantasy/probabilities_1.html">Matchup Win</option>
   <option value = "../files/fantasy/probabilities_2.html">Field Goals Percentage (FG%)</option>
   <option value = "../files/fantasy/probabilities_3.html">Free Throws Percentage (FT%)</option>
-  <option value = "../files/fantasy/probabilities_4.html">Points Scored (PTS)</option>
-  <option value = "../files/fantasy/probabilities_5.html">3-Point Shots Made (3PTM)</option>
+  <option value = "../files/fantasy/probabilities_4.html">3-Point Shots Made (3PTM)</option>
+  <option value = "../files/fantasy/probabilities_5.html">Points Scored (PTS)</option>
   <option value = "../files/fantasy/probabilities_6.html">Rebounds (REB)</option>
   <option value = "../files/fantasy/probabilities_7.html">Assists (AST)</option>
-  <option value = "../files/fantasy/probabilities_8.html">Steals (STL)</option>
+  <option value = "../files/fantasy/probabilities_8.html">Steals (ST)</option>
   <option value = "../files/fantasy/probabilities_9.html">Blocks (BLK)</option>
   <option value = "../files/fantasy/probabilities_10.html">Turnovers (TO)</option>
 </select>
