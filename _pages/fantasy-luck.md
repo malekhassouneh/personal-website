@@ -9,4 +9,4 @@ author_profile: true
 
 ## Cumulative Category Luck
 
-<iframe src = "../files/cumulative_luck.html" width = "100%" height = "600" frameborder = "0" style = "border: none;"></iframe>
+<iframe src = "../files/cumulative_luck.html" width = "100%" height = "800" frameborder = "0" style = "border: none;"></iframe>
