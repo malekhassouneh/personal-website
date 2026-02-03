@@ -7,20 +7,22 @@ author_profile: true
 
 ## Aggregate Matchup Probabilities
 
-<select id="pageSelector" onchange="changeFrame()">
+<select id = "pageSelector" onchange = "changeFrame()" style = "display: block; margin: 0 auto;">
   <option value = "../files/fantasy/probabilities_1.html">Matchup Win</option>
-  <option value = "../files/fantasy/probabilities_1.html">Field Goals Percentage (FG%)</option>
-  <option value = "../files/fantasy/probabilities_1.html">Free Throws Percentage (FT%)</option>
-  <option value = "../files/fantasy/probabilities_1.html">Points Scored (PTS)</option>
-  <option value = "../files/fantasy/probabilities_1.html">3-Point Shots Made (3PTM)</option>
-  <option value = "../files/fantasy/probabilities_1.html">Rebounds (REB)</option>
-  <option value = "../files/fantasy/probabilities_1.html">Assists (AST)</option>
-  <option value = "../files/fantasy/probabilities_1.html">Steals (STL)</option>
-  <option value = "../files/fantasy/probabilities_1.html">Blocks (BLK)</option>
-  <option value = "../files/fantasy/probabilities_1.html">Turnovers (TO)</option>
+  <option value = "../files/fantasy/probabilities_2.html">Field Goals Percentage (FG%)</option>
+  <option value = "../files/fantasy/probabilities_3.html">Free Throws Percentage (FT%)</option>
+  <option value = "../files/fantasy/probabilities_4.html">Points Scored (PTS)</option>
+  <option value = "../files/fantasy/probabilities_5.html">3-Point Shots Made (3PTM)</option>
+  <option value = "../files/fantasy/probabilities_6.html">Rebounds (REB)</option>
+  <option value = "../files/fantasy/probabilities_7.html">Assists (AST)</option>
+  <option value = "../files/fantasy/probabilities_8.html">Steals (STL)</option>
+  <option value = "../files/fantasy/probabilities_9.html">Blocks (BLK)</option>
+  <option value = "../files/fantasy/probabilities_10.html">Turnovers (TO)</option>
 </select>
 
-<iframe id = "myFrame" src = "../files/fantasy/probabilities_1.html" width = "100%" height = "800" frameborder = "0" style="border: none; display: block;"></iframe>
+<iframe id = "myFrame" src = "../files/fantasy/probabilities_1.html" width = "100%" height = "800" frameborder = "0" style = "border: none; display: block;"></iframe>
+
+<select id="pageSelector" onchange="changeFrame()" >
 
 <script>
   function changeFrame() {
