@@ -7,7 +7,7 @@ author_profile: true
 
 ## Aggregate Matchup Probabilities
 
-<select id = "pageSelector" onchange = "changeFrame()" style = "display: block; margin: 0 auto;">
+<select id = "pageSelector" onchange = "changeFrame()" style = "display: block; margin: 0 auto; color: #000000;">
   <option value = "../files/fantasy/probabilities_1.html">Matchup Win</option>
   <option value = "../files/fantasy/probabilities_2.html">Field Goals Percentage (FG%)</option>
   <option value = "../files/fantasy/probabilities_3.html">Free Throws Percentage (FT%)</option>
