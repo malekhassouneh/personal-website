@@ -1,11 +1,32 @@
 ---
 layout: archive
-title: "Fantasy Luck"
-permalink: /fantasy-luck/
+title: "Fantasy Statistics"
+permalink: /fantasy/
 author_profile: true
 ---
 
-<!-- ## Published -->
+## Aggregate Matchup Probabilities
+
+<select id="pageSelector" onchange="changeFrame()">
+  <option value = "../files/fantasy/probabilities_1.html">Matchup Win</option>
+  <option value = "../files/fantasy/probabilities_1.html">Field Goals Percentage (FG%)</option>
+  <option value = "../files/fantasy/probabilities_1.html">Free Throws Percentage (FT%)</option>
+  <option value = "../files/fantasy/probabilities_1.html">Points Scored (PTS)</option>
+  <option value = "../files/fantasy/probabilities_1.html">3-Point Shots Made (3PTM)</option>
+  <option value = "../files/fantasy/probabilities_1.html">Rebounds (REB)</option>
+  <option value = "../files/fantasy/probabilities_1.html">Assists (AST)</option>
+  <option value = "../files/fantasy/probabilities_1.html">Steals (STL)</option>
+  <option value = "../files/fantasy/probabilities_1.html">Blocks (BLK)</option>
+  <option value = "../files/fantasy/probabilities_1.html">Turnovers (TO)</option>
+</select>
+
+<iframe id = "myFrame" src = "../files/fantasy/probabilities_1.html" width = "100%" height = "800" frameborder = "0" style="border: none; display: block;"></iframe>
+
+<script>
+  function changeFrame() {
+    document.getElementById('myFrame').src = document.getElementById('pageSelector').value;
+  }
+</script>
 
 ## Cumulative Schedule Luck
 
@@ -19,4 +40,4 @@ That's great, but how do I read this plot for my specific team? To simplify thin
 
 2. League Position -- Another angle to approach the plot by is to look at your actual league position (solid line) and compare it to your league position if you were to sum up your *expected* categories instead (dotted line). Your expected league position is a strong indicator of how your team really ranks against the rest of the league, purging any week-to-week variation. If you have a keen eye, you may have noticed that when the gap between the expected and realized categories is green (realized > expected), then your solid line exceeds your dotted line. In that sense, you are overperforming your expected league position. The opposite is true when the gap is red (expected > realized), and your dotted line exceeds your solid line. Then, you are underperforming your expected league position.
 
-<iframe src = "../files/cumulative_luck.html" width = "100%" height = "800" frameborder = "0" style = "border: none; display: block;"></iframe>
+<iframe src = "../files/fantasy/cumulative_luck.html" width = "100%" height = "800" frameborder = "0" style = "border: none; display: block;"></iframe>
