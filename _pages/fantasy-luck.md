@@ -22,8 +22,6 @@ author_profile: true
 
 <iframe id = "myFrame" src = "../files/fantasy/probabilities_1.html" width = "100%" height = "800" frameborder = "0" style = "border: none; display: block;"></iframe>
 
-<select id="pageSelector" onchange="changeFrame()" >
-
 <script>
   function changeFrame() {
     document.getElementById('myFrame').src = document.getElementById('pageSelector').value;
