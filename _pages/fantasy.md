@@ -115,7 +115,7 @@ Tying this back to the concept of schedule luck, we can look at how lucky (or un
 
 Notice that when the gap between the realized and expected categories is green (realized > expected), then your realized league position (solid line) exceeds your expected league position (dashed line). In that sense, you are overperforming your expected league position. The opposite is true when the gap is red (expected > realized), and your dashed line exceeds your solid line. Then, you are underperforming your expected league position.
 
-<iframe src = "../files/fantasy/cumulative_luck.html" width = "100%" height = "735" frameborder = "0" style = "border: none; display: block;"></iframe>
+<iframe src = "../files/fantasy/cumulative_luck.html" width = "100%" height = "745" frameborder = "0" style = "border: none; display: block;"></iframe>
 
 ## 2.3 Mathematical Representation
 
