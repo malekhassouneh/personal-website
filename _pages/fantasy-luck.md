@@ -5,17 +5,17 @@ permalink: /fantasy/
 author_profile: true
 ---
 
-## 1 Aggregate Matchup Probabilities
+# 1 Aggregate Matchup Probabilities
 
-### 1.1 Basic Introduction
+## 1.1 Basic Introduction
 
 Part of managing your fantasy team requires a coarse understanding of how well your team performs against other teams, also known as **matchup-specificity**, and how well your team performs in specific categories, say **category-specificity**. The more adept you are at approximating these specificities, i.e. zeroing in on your strengths and weaknesses, the likelier you are to make well-informed decisions (trades, waiver pick-ups, etc.) The difficulity is trying to keep track of how well you perform across all of these dimensions on a week-by-week basis. Tabulating this information goes a long way in overcoming this.
 
 The goal is to simply keep track of the binary outcomes for each category of interest and the matchup result for every week. We can then find the *proportion* of times a team beats another team along a specific dimension. Over a wider window weeks, as the season progresses, these proportions or frequencies can be interpreted as **aggregate probabilities**. These probabilities are quite representative, and can be used to infer a team's best (worst) matchup and best (worst) performing categories. 
 
-### 1.2 Graphical Representation
+## 1.2 Graphical Representation
 
-#### 1.2.1 How do I read off my probabilities?
+### 1.2.1 How do I read off my probabilities?
 
 To start, use the dropdown menu to pick a category that you want to compare your team in. Any of the 9 categories will do, or you can look at the binary outcome of whether you beat another team. You'll see a heatmap (matrix) that contains team names on the left side and on the bottom. Find your team on the left hand side of the matrix. Your team name comes with two summary statistics: 
 
@@ -52,7 +52,7 @@ Naturally, the more dominant you are in a specific matchup, the larger the diffe
   }
 </script>
 
-#### 1.2.1 How do I make use of this information?
+### 1.2.1 How do I make use of this information?
 
 A couple of initial thoughts on how this information could be helpful in specific contexts:
 
@@ -60,7 +60,7 @@ A couple of initial thoughts on how this information could be helpful in specifi
 
 2. **Matchup Hunting** -- While this could possibly end up backfiring, there is a plausible argument for strategically *losing* matchups towards the end of the league portion of the fantasy season, in hopes of getting a better first round matchup. If you are tied at 5th place with the team currently in 6th, and your matchup as a 6th seed (3rd) is better than the 5th seed (4th), you might want to make sure that you get that seed locked in. Of course, your placement relies on results elsewhere going a specific way, so tread with caution.
 
-<!-- ### 1.3 Mathematical Representation
+<!-- ## 1.3 Mathematical Representation
 
 What follows below is an attempt at a formal exposition of the concepts explored above, but in mathematical terms. While formal notation may seem excessive, this allows for greater tractability of the objects of interest in other related analyses:
 
@@ -71,17 +71,17 @@ Let $\text{Pr}(X)$
 
 </details> -->
 
-## 2 Cumulative Schedule Luck
+# 2 Cumulative Schedule Luck
 
-### 2.1 Basic Introduction
+## 2.1 Basic Introduction
 
 Have you ever had the misfortune of having your team perform amazingly and beating everyone in the league except for the one team that you actually matched up against? Converseley, you may have had a horrible week, where every possible thing went wrong (underperformance, injuries etc.), but you happened to matchup up against the only other team performing worse than you. Both of these scenarios are extreme forms of **schedule luck**, i.e. how the "when you play who" aspect of fantasy affects your performance over an entire season. Of course, the first scenario above is an example where your schedule luck is positive (lucky), and the second where your schedule luck is negative (unlucky).
  
 The easiest way to disentangle schedule luck from your fantasy performance is to compare the number of categories you won in a given week against your *actual* matchup, to the number of categories that you win *on average* against the rest of the players that you *don't* matchup against that week. If your matchup allows you to win more categories than you should be winning on average that week, that's schedule luck at play. The natural variance in player performance week-by-week guarantees that some weeks will be lucky, and others unlucky. That's fine, but over an entire season, we should expect this luck to wash out, i.e. the lucky and unlucky weeks cancel out. Any surplus (or deficit) of luck that remains at the end of the season is then used to brand teams as "lucky" and "unlucky", along this dimension at least.
 
-### 2.2 Graphical Representation
+## 2.2 Graphical Representation
 
-#### 2.2.1 What is each line plotting?
+### 2.2.1 What is each line plotting?
 
 The plot below displays this concept for every team, and charts the evolution of schedule luck over the entire fantasy season. We can keep track of a team's actual (realized) performance over the entire season, i.e. the total (cumulative) number of categories won, and the corresponding position that they hold in the league standings. We can also do this by using the *expected* values instead, i.e. the averages per week, and chart the total (cumulative) *expected* number of categories won and the *expected* league position for a team over the entire season.
 
@@ -95,7 +95,7 @@ Let's breakdown the plot line-by-line to simplify it's interpretation. First, us
 
 4. **Expected Position** -- Alternatively, using the expected categories, we get a hypothetical league table that ranks teams based on the cumulative value of their expected categories. In theory, this should reflect the "true" league table, providing a stronger indicator of how a team really ranks against the rest of the league by purging any week-by-week variation induced by scheduled matchups. This is the dashed black line.
 
-#### 2.2.2 What information does each point contain?
+### 2.2.2 What information does each point contain?
 
 Moreover, each point in the plot, when hovered over, displays some extra information that helps you understand the context behind the data point:
 
@@ -105,7 +105,7 @@ Moreover, each point in the plot, when hovered over, displays some extra informa
 
 3. **Weekly Change** -- For categories, this is the number of categories that you won that week, and for league position, this is the change in your position in the standings. This is labelled as a delta value ($\Delta$) because this is equivalent to the change in your cumulative sum of categories, or your league position, from one week to another (week-over-week).
 
-#### 2.2.3 How do I read off my schedule luck?
+### 2.2.3 How do I read off my schedule luck?
 
 Tying this back to the concept of schedule luck, we can look at how lucky (or unlucky) one's team was each week, or over the span of the entire season. Specifically:
 
@@ -117,7 +117,7 @@ Notice that when the gap between the realized and expected categories is green (
 
 <iframe src = "../files/fantasy/cumulative_luck.html" width = "100%" height = "800" frameborder = "0" style = "border: none; display: block;"></iframe>
 
-### 2.3 Mathematical Representation
+## 2.3 Mathematical Representation
 
 What follows below is an attempt at a formal exposition of the concepts explored above, but in mathematical terms. While formal notation may seem excessive, this allows for greater tractability of the objects of interest in other related analyses:
 
