@@ -121,9 +121,6 @@ Notice that when the gap between the realized and expected categories is green (
 
 What follows below is an attempt at a formal exposition of the concepts explored above, but in mathematical terms. While formal notation may seem excessive, this allows for greater tractability of the objects of interest in other related analyses:
 
-<details>
-<summary>More Details</summary>
-
 Consider the setting of a weekly "Head-to-Head Categories" fantasy league. Let $\mathcal{I}$ be the set of teams in the league (in a 12-team league, $\left|\mathcal{I}\right| = 12$), and let $\mathcal{C}$ be the set of categories scored each week (in a 9-category league, $\left|\mathcal{C}\right| = 9$). For every team, $i$, and week, $w$, we have $x_{i,w} = \left\{x^{c}_{i,w} \right\}_{c \in \mathcal{C}}$, namely the recorded statistics for each of the categories of interest. Given team $i$'s opponent in week $w$, team $i^\prime$, we define $X_{i, w} \equiv X_{(i, i^\prime), w}$ as the number of categories won by team $i$ that week, specifically:
 
 ```math
@@ -158,6 +155,7 @@ It follows that we can define analogous *expected* objects, $\tilde{\Sigma}^{\ba
 
 \end{aligned}
 ```
+
 Note that $\Delta^{w}_{i} = X_{i,w} - \tilde{X}_{i,w}$ corresponds to the week-specific schedule luck for team $i$ at week $w$. Now, the corresponding schedule luck in terms of league standings would then be defined as:
 
 ```math
@@ -165,5 +163,3 @@ Note that $\Delta^{w}_{i} = X_{i,w} - \tilde{X}_{i,w}$ corresponds to the week-s
 ```
 
 Note that the sign of $\mathcal{L}^{\theta}$ must be reversed for an appropriate interpretation of luck, given the decreasing ordinal nature of league standings. $\mathcal{L}_{i}^{\Sigma}$ and $\mathcal{L}_{i}^{\theta}$ can then be interpreted naturally: for any two teams $i$ and $i^\prime$, we say that $i$ has greater schedule luck than $i^\prime$ if $\mathcal{L}_{i}^{\Sigma} \geq \mathcal{L}_{i^\prime}^{\Sigma}$, and similarly $\mathcal{L}_{i}^{\theta} \geq \mathcal{L}_{i^\prime}^{\theta}$.
-
-</details>
