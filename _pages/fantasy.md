@@ -121,13 +121,13 @@ Notice that when the gap between the realized and expected categories is green (
 
 What follows below is an attempt at a formal exposition of the concepts explored above, but in mathematical terms. While formal notation may seem excessive, this allows for greater tractability of the objects of interest in other related analyses:
 
-Consider the setting of a weekly "Head-to-Head Categories" fantasy league. Let $$\mathcal{I}$$ be the set of teams in the league (in a 12-team league, $$\left|\mathcal{I}\right| = 12$$), and let $$\mathcal{C}$$ be the set of categories scored each week (in a 9-category league, $$\left|\mathcal{C}\right| = 9$$). For every team, $$i$$, and week, $$w$$, we have $$x_{i,w} = \left\{x^{c}_{i,w} \right\}_{c \in \mathcal{C}}$$, namely the recorded statistics for each of the categories of interest. Given team $$i$$'s opponent in week $$w$$, team $$i^\prime$$, we define $$X_{i, w} \equiv X_{(i, i^\prime), w}$$ as the number of categories won by team $$i$$ that week, specifically:
+Consider the setting of a weekly "Head-to-Head Categories" fantasy league. Let $$\mathcal{I}$$ be the set of teams in the league (in a 12-team league, $$|\mathcal{I}| = 12$$), and let $$\mathcal{C}$$ be the set of categories scored each week (in a 9-category league, $$|\mathcal{C}| = 9$$). For every team, $$i$$, and week, $$w$$, we have $$x_{i,w} = \{x^{c}_{i,w} \}_{c \in \mathcal{C}}$$, namely the recorded statistics for each of the categories of interest. Given team $$i$$'s opponent in week $$w$$, team $$i^\prime$$, we define $$X_{i, w} \equiv X_{(i, i^\prime), w}$$ as the number of categories won by team $$i$$ that week, specifically:
 
 $$
-X_{i, w} = \sum_{c \in \mathcal{C}}{\left(I\left\{x^{c}_{i, w} > x^{c}_{i^\prime, w}\right\} + 0.5 \cdot I\left\{x^{c}_{i, w} = x^{c}_{i^\prime, w}\right\}\right)}
+X_{i, w} = \sum_{c \in \mathcal{C}}{(I\{x^{c}_{i, w} > x^{c}_{i^\prime, w}\} + 0.5 \cdot I\{x^{c}_{i, w} = x^{c}_{i^\prime, w}\})}
 $$
 
-Note that we drop the opponent index $$i^\prime$$ in $$X_{i, w}$$ where necessary moving forward for ease of notation. Notice that $$X_{i^\prime, w} = \left|\mathcal{C}\right| - X_{i, w}$$, i.e. the residual number of categories, with $$ 0 \leq X_{i, w} \leq \left|\mathcal{C}\right|$$. Up to and including a specific week, say $$\bar{w}$$, we can define $$\Sigma^{\bar{w}}_{i}$$ as the cumulative sum of the number of categories won by team $$i$$, specifically: 
+Note that we drop the opponent index $$i^\prime$$ in $$X_{i, w}$$ where necessary moving forward for ease of notation. Notice that $$X_{i^\prime, w} = |\mathcal{C}| - X_{i, w}$$, i.e. the residual number of categories, with $$ 0 \leq X_{i, w} \leq |\mathcal{C}|$$. Up to and including a specific week, say $$\bar{w}$$, we can define $$\Sigma^{\bar{w}}_{i}$$ as the cumulative sum of the number of categories won by team $$i$$, specifically: 
 
 $$
 \Sigma^{\bar{w}}_{i} = \sum_{w \leq \bar{w}}{X_{i, w}}
@@ -136,13 +136,13 @@ $$
 We then define the corresponding league standing position of that team at the end of week $$\bar{w}$$ as:
 
 $$
-\theta^{\bar{w}}_{i} = 1 + \sum_{i^\prime \in \mathcal{I}\setminus{\{i\}}}{\left(I\left\{\Sigma^{\bar{w}}_{i^\prime} > \Sigma^{\bar{w}}_{i}\right\} + 0.5 \cdot I\left\{\Sigma^{\bar{w}}_{i^\prime} = \Sigma^{\bar{w}}_{i}\right\}\right)}
+\theta^{\bar{w}}_{i} = 1 + \sum_{i^\prime \in \mathcal{I}\setminus{\{i\}}}{(I\{\Sigma^{\bar{w}}_{i^\prime} > \Sigma^{\bar{w}}_{i}\} + 0.5 \cdot I\{\Sigma^{\bar{w}}_{i^\prime} = \Sigma^{\bar{w}}_{i}\})}
 $$
 
-As such, for each team $$i$$ and end-of-week $$\bar{w}$$ we are interested in the tuple $$\left(\Sigma^{\bar{w}}_{i}, \theta^{\bar{w}}_{i}\right)$$. Now consider the hypothetical scenario where, instead of a head-to-head format with single opponents each week, every team $$i$$ in a given week $$w$$, matches up against the *remainder* of the league, $$\mathcal{I}\setminus{\{i\}}$$. We then define $$\tilde{X}_{i, w}$$ as the *expected* number of categories won that week, a simple artihmetic average across all other teams, specifically:
+As such, for each team $$i$$ and end-of-week $$\bar{w}$$ we are interested in the tuple $$(\Sigma^{\bar{w}}_{i}, \theta^{\bar{w}}_{i})$$. Now consider the hypothetical scenario where, instead of a head-to-head format with single opponents each week, every team $$i$$ in a given week $$w$$, matches up against the *remainder* of the league, $$\mathcal{I}\setminus{\{i\}}$$. We then define $$\tilde{X}_{i, w}$$ as the *expected* number of categories won that week, a simple artihmetic average across all other teams, specifically:
 
 $$
-\tilde{X}_{i, w} = \frac{1}{\left|\mathcal{C}\right|}\sum_{i^\prime \in \mathcal{I}\setminus{\{i\}}}{X_{(i, i^\prime), w}}
+\tilde{X}_{i, w} = \frac{1}{|\mathcal{C}|}\sum_{i^\prime \in \mathcal{I}\setminus{\{i\}}}{X_{(i, i^\prime), w}}
 $$
 
 It follows that we can define analogous *expected* objects, $$\tilde{\Sigma}^{\bar{w}}_{i}$$ and $$\tilde{\theta}^{\bar{w}}_{i}$$, as above but now using the *expected* number of categories won, $$\tilde{X}_{i, w}$$, in place of the *realized* number of categories won, $$X_{i, w}$$, in any given week $$w$$. Formally, we can now define one's **schedule luck** as the difference between their *realized* cumulative sum of categories won, and the *expected* cumulative sum of categories won, specifically: 
@@ -150,7 +150,7 @@ It follows that we can define analogous *expected* objects, $$\tilde{\Sigma}^{\b
 $$
 \begin{aligned}
 \mathcal{L}_{i}^{\Sigma} &= \Sigma^{\bar{w}}_{i} - \tilde{\Sigma}^{\bar{w}}_{i} \\
- &= \sum_{w \leq \bar{w}}{\left(X_{i,w} - \tilde{X}_{i,w}\right)} \\
+ &= \sum_{w \leq \bar{w}}{(X_{i,w} - \tilde{X}_{i,w})} \\
  &= \sum_{w \leq \bar{w}}{\Delta^{w}_{i}}
 
 \end{aligned}
@@ -159,7 +159,7 @@ $$
 Note that $$\Delta^{w}_{i} = X_{i,w} - \tilde{X}_{i,w}$$ corresponds to the week-specific schedule luck for team $$i$$ at week $$w$$. Now, the corresponding schedule luck in terms of league standings would then be defined as:
 
 $$
-\mathcal{L}_{i}^{\theta} = -1 \cdot \left(\theta^{\bar{w}}_{i} - \tilde{\theta}^{\bar{w}}_{i}\right)
+\mathcal{L}_{i}^{\theta} = -1 \cdot (\theta^{\bar{w}}_{i} - \tilde{\theta}^{\bar{w}}_{i})
 $$
 
 Note that the sign of $$\mathcal{L}^{\theta}$$ must be reversed for an appropriate interpretation of luck, given the decreasing ordinal nature of league standings. $$\mathcal{L}_{i}^{\Sigma}$$ and $$\mathcal{L}_{i}^{\theta}$$ can then be interpreted naturally: for any two teams $$i$$ and $$i^\prime$$, we say that $$i$$ has greater schedule luck than $$i^\prime$$ if $$\mathcal{L}_{i}^{\Sigma} \geq \mathcal{L}_{i^\prime}^{\Sigma}$$, and similarly $$\mathcal{L}_{i}^{\theta} \geq \mathcal{L}_{i^\prime}^{\theta}$$.
